@@ -1,0 +1,25 @@
+<h1>Persona</h1>
+<table border="2px">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>e-mail</th>
+      <th>Edad</th>
+      <th>View</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @personas.each do |persona| %> <!-- Los pipes indican el elemento actual, en e que va, porque se hace un each y este pasa por cada uno -->
+      <tr>
+        <td><%= persona.nombre %></td>
+        <td><%= persona.email %></td>
+        <td><%= persona.edad %></td>
+        <td><%= link_to "Aqui sigue un link", persona_path(persona) %></td>
+      </tr>
+<% end %>
+  </tbody>
+</table><br>
+
+<div >
+  <%=link_to "Ingresar Usuario", new_persona_path %>
+</div>
