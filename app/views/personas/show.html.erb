@@ -1,11 +1,15 @@
 <h2>Tu nombre es <%= @persona.nombre %></h2>
 <h2>Tu correo <%= @persona.email %></h2>
-<div class="container">
+<div>
   <h1>Tienes <%= @persona.edad %></h1>
 </div><br>
 
 <div >
   <%=link_to "Volver", personas_path %>
+</div>
+
+<div>
+  <%= link_to "Editar", edit_persona_path(@persona) %>
 </div>
 
 <div >

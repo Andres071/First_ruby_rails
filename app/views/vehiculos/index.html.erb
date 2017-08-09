@@ -1,0 +1,30 @@
+<h1>Vehiculo</h1>
+<table class="table table-hover", border="2px">
+  <thead>
+    <tr>
+      <th>Marca</th>
+      <th>Color</th>
+      <th>Linea</th>
+      <th>Modelo</th>
+      <th>Precio</th>
+      <th>Registro</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @vehiculo.each do |vehiculo,| %> <!-- Los pipes indican el elemento actual, en e que va, porque se hace un each y este pasa por cada uno -->
+      <tr>
+        <td><%= vehiculo.marca%></td>
+        <td><%= vehiculo.color %></td>
+        <td><%= vehiculo.linea %></td>
+        <td><%= vehiculo.modelo %></td>
+        <td><%= vehiculo.precio %></td>
+        <td><%= link_to "Item", vehiculo_path(vehiculo) %></td>
+      </tr>
+<% end %>
+  </tbody>
+</table><br>
+
+<div>
+  <%=link_to "Ingresar Nuevo Vehiculo", new_vehiculo_path, class:"btn btn-default btn-lg" %>
+</div>
+

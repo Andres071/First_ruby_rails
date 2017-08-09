@@ -1,0 +1,17 @@
+<div><h2>Tu auto es <%= @vehiculo.marca %></h2></div><br>
+<div><h2>El color de tu auto es <%= @vehiculo.color %></h2></div><br>
+<div><h2>La linea de tu auto es <%= @vehiculo.linea %></h2></div><br>
+<div><h2>El modelo de tu auto es <%= @vehiculo.modelo %></h2></div><br>
+<div><h2>Tu auto cuesta <%= @vehiculo.precio %></h2></div><br>
+
+<div>
+  <%=link_to "Volver", vehiculos_path, class: "btn-primary" %>
+</div><br>
+
+<div>
+  <%= link_to "Editar", edit_vehiculo_path(@vehiculo), class: "btn-primary" %>
+</div><br>
+
+<div>
+  <%= link_to "Eliminar", @vehiculo , method: :delete, data: { confirm: "¿Estas seguro?" }, class: "btn-primary" %>
+</div><br>

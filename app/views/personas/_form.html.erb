@@ -1,0 +1,24 @@
+<h1><%= form_title %></h1>
+<%= form_for @persona do |f| %>
+
+<div class="">
+  <%= f.label :nombre %>
+  <%= f.text_field :nombre %>
+</div>
+<div class="">
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+</div>
+<div class="">
+  <%= f.label :edad %>
+  <%= f.number_field :edad %>
+</div><br>
+<div class="">
+  <%= f.submit "Create", class: "btn btn-default dropdown-toggle" %>
+</div>
+<% end %><br>
+
+
+<div >
+  <%=link_to "Volver", personas_path %>
+</div>
