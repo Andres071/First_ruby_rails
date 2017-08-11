@@ -1,8 +1,19 @@
-<div><h2>Tu auto es <%= @vehiculo.marca %></h2></div><br>
-<div><h2>El color de tu auto es <%= @vehiculo.color %></h2></div><br>
-<div><h2>La linea de tu auto es <%= @vehiculo.linea %></h2></div><br>
-<div><h2>El modelo de tu auto es <%= @vehiculo.modelo %></h2></div><br>
-<div><h2>Tu auto cuesta <%= @vehiculo.precio %></h2></div><br>
+<ul>
+<li><h2>Tu auto es <%= @vehiculo.marca %></h2></li>
+
+<li><h2>El color de tu auto es <%= @vehiculo.color %></h2></li>
+
+<li><h2>La linea de tu auto es <%= @vehiculo.linea %></h2></li>
+
+<li><h2>El modelo de tu auto es <%= @vehiculo.modelo %></h2></li>
+
+<li><h2>Tu auto cuesta <%= @vehiculo.precio %></h2></li>
+
+<li>Propietario:
+  <%= @vehiculo.persona.nombre if @vehiculo.persona %> <%= @vehiculo.persona.email if @vehiculo.persona%>
+  <%= link_to "Detalle", persona_path(@vehiculo.persona) if @vehiculo.persona %>
+</li>
+</ul><br>
 
 <div>
   <%=link_to "Volver", vehiculos_path, class: "btn-primary" %>

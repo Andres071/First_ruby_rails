@@ -1,24 +1,36 @@
 <h1><%= form_title %></h1>
+
+<% if @persona.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+      <% @persona.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>  
+  </div>
+<% end %>
+
+
 <%= form_for @persona do |f| %>
 
-<div class="">
+<div class="form-group">
   <%= f.label :nombre %>
   <%= f.text_field :nombre %>
 </div>
 <div class="">
-  <%= f.label :email %>
+  <%= f.label :email, class:"form-group" %>
   <%= f.email_field :email %>
 </div>
 <div class="">
-  <%= f.label :edad %>
+  <%= f.label :edad, class:"form-group" %>
   <%= f.number_field :edad %>
 </div><br>
+
 <div class="">
   <%= f.submit "Create", class: "btn btn-default dropdown-toggle" %>
+  <%=link_to "Volver", personas_path, class: "btn btn-default dropdown-toggle"%>
+  <%=link_to "Inicio", root_path, class: "btn btn-default dropdown-toggle" %>
 </div>
 <% end %><br>
 
 
-<div >
-  <%=link_to "Volver", personas_path %>
-</div>

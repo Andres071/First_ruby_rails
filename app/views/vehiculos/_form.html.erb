@@ -1,27 +1,44 @@
 <h1><%= form_vehiculo %></h1>
+
+
 <%= form_for @vehiculo do |f| %>
 
 <div class="">
   <%= f.label :marca, class:"form-group" %>
   <%= f.text_field :marca %>
 </div>
+
 <div class="">
   <%= f.label :color, class:"form-group " %>
   <%= f.text_field :color %>
 </div>
+
 <div class="">
   <%= f.label :linea, class:"form-group " %>
   <%= f.text_field :linea %>
 </div>
+
 <div class="">
   <%= f.label :modelo, class:"form-group " %>
   <%= f.number_field :modelo %>
 </div>
+
 <div class="">
   <%= f.label :precio, class:"form-group " %>
   <%= f.number_field :precio %>
 </div><br>
+
+<div>
+    <%= f.label :persona_id, class:"form-group " %>
+    <%= f.select :persona_id, Persona.all.collect {|a| [a.nombre, a.id] } %>
+</div><br>
+
 <div class="">
   <%= f.submit "Ingresar", class: "btn btn-default dropdown-toggle" %>
+  <%=link_to "Volver", vehiculos_path, class: "btn btn-default dropdown-toggle"%>
+  <%=link_to "Inicio", root_path, class: "btn btn-default dropdown-toggle" %>
+  
 </div>
+
+
 <% end %>

@@ -14,7 +14,7 @@ class VehiculosController < ApplicationController
   def create
     @vehiculo = Vehiculo.new(vehiculo_params)
     if @vehiculo.save
-      redirect_to vehiculos_path, notice: "Ingreso Satisfactorio"
+      redirect_to vehiculos_path
     else
       render "new"
     end
@@ -43,7 +43,7 @@ class VehiculosController < ApplicationController
   private
 
   def vehiculo_params
-    params.require(:vehiculo).permit(:marca, :color, :linea, :modelo, :precio)
+    params.require(:vehiculo).permit(:marca, :color, :linea, :modelo, :precio, :persona_id)
   end
 end
 

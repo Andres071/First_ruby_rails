@@ -11,7 +11,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @vehiculo.each do |vehiculo,| %> <!-- Los pipes indican el elemento actual, en e que va, porque se hace un each y este pasa por cada uno -->
+    <% @vehiculo.each do |vehiculo| %> <!-- Los pipes indican el elemento actual, en e que va, porque se hace un each y este pasa por cada uno -->
       <tr>
         <td><%= vehiculo.marca%></td>
         <td><%= vehiculo.color %></td>
@@ -25,6 +25,7 @@
 </table><br>
 
 <div>
-  <%=link_to "Ingresar Nuevo Vehiculo", new_vehiculo_path, class:"btn btn-default btn-lg" %>
+  <%=link_to "Ingresar Nuevo Vehiculo", new_vehiculo_path, class:"btn btn-default dropdown-toggle" %>
+  <%=link_to "Inicio", root_path, class: "btn btn-default dropdown-toggle" %>
 </div>
 
